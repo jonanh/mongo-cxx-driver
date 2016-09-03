@@ -1,0 +1,29 @@
+From: Jon Ander Hernandez <jonan.h@gmail.com>
+Date: Sat, 3 Sep 2016 20:05:05 +0300
+Subject: Modify src/bsoncxx/third_party/CMakeLists.txt to use the store copy
+ of mnmlstc
+
+---
+ src/bsoncxx/third_party/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/bsoncxx/third_party/CMakeLists.txt b/src/bsoncxx/third_party/CMakeLists.txt
+index 689cd0f..1f9f045 100644
+--- a/src/bsoncxx/third_party/CMakeLists.txt
++++ b/src/bsoncxx/third_party/CMakeLists.txt
+@@ -26,13 +26,13 @@ if (BSONCXX_POLY_USE_MNMLSTC AND NOT BSONCXX_POLY_USE_SYSTEM_MNMLSTC)
+         LOG_INSTALL ON
+         LOG_UPDATE ON
+         UPDATE_COMMAND ""
+-        CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DBUILD_TESTING=Off -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_INSTALL_PREFIX}/${BSONCXX_HEADER_INSTALL_DIR}/bsoncxx/third_party/mnmlstc -DINCLUDE_INSTALL_DIR=.
++        CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DBUILD_TESTING=Off -DCMAKE_INSTALL_PREFIX:PATH=${PROJECT_SOURCE_DIR}/${BSONCXX_HEADER_INSTALL_DIR}/bsoncxx/third_party/mnmlstc -DINCLUDE_INSTALL_DIR=.
+     )
+ 
+     ExternalProject_Add_Step(
+         EP_mnmlstc_core
+         fix-includes
+-        WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${BSONCXX_HEADER_INSTALL_DIR}/bsoncxx/third_party/mnmlstc
++        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/${BSONCXX_HEADER_INSTALL_DIR}/bsoncxx/third_party/mnmlstc
+         COMMAND find . -type f | xargs perl -pi -e "s|#include <core|#include <bsoncxx/third_party/mnmlstc/core|g"
+         DEPENDEES install
+     )
