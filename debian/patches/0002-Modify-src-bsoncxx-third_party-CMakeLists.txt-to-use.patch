@@ -4,14 +4,25 @@ Subject: Modify src/bsoncxx/third_party/CMakeLists.txt to use the store copy
  of mnmlstc
 
 ---
- src/bsoncxx/third_party/CMakeLists.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ src/bsoncxx/third_party/CMakeLists.txt | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/src/bsoncxx/third_party/CMakeLists.txt b/src/bsoncxx/third_party/CMakeLists.txt
-index 689cd0f..1f9f045 100644
+index 689cd0f..0963a8b 100644
 --- a/src/bsoncxx/third_party/CMakeLists.txt
 +++ b/src/bsoncxx/third_party/CMakeLists.txt
-@@ -26,13 +26,13 @@ if (BSONCXX_POLY_USE_MNMLSTC AND NOT BSONCXX_POLY_USE_SYSTEM_MNMLSTC)
+@@ -18,21 +18,22 @@ if (BSONCXX_POLY_USE_MNMLSTC AND NOT BSONCXX_POLY_USE_SYSTEM_MNMLSTC)
+ 
+     ExternalProject_Add(
+         EP_mnmlstc_core
+-        GIT_REPOSITORY https://github.com/mnmlstc/core
+-        GIT_TAG v1.1.0
++        #GIT_REPOSITORY https://github.com/mnmlstc/core
++        #GIT_TAG v1.1.0
++        SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/core
+         LOG_DOWNLOAD ON
+         LOG_CONFIGURE ON
+         LOG_BUILD ON
          LOG_INSTALL ON
          LOG_UPDATE ON
          UPDATE_COMMAND ""
