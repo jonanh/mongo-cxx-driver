@@ -1,0 +1,39 @@
+Source: mongo-cxx-driver
+Priority: optional
+Maintainer: Jon Ander Hernandez <jonan.h@gmail.com>
+Standards-Version: 3.9.6
+Section: libs
+Homepage: https://github.com/mongodb/mongo-cxx-driver/wiki/
+Build-Depends: debhelper (>= 9),
+               devscripts,
+               build-essential,
+               pkg-config,
+               g++,
+               git,
+               libbson-dev,
+               libmongoc-dev,
+               libssl-dev,
+               libcrypto++-dev,
+               cmake (>= 3.5)
+
+Package: libmongocxx-dev
+Section: libdevel
+Architecture: any
+Depends: libmongocxx (= ${binary:Version}), ${misc:Depends}
+Description: MongoDB C++ Driver (development)
+ This package provides C++ development file to interact with MongoDB.
+ This is the legacy C++ driver and currently supports MongoDB 2.4, 2.6,
+ 3.0 and 3.2.
+ .
+ This package contains the development support files.
+
+Package: libmongocxx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MongoDB C++ Driver (development)
+ This package provides C++ development file to interact with MongoDB.
+ This is the legacy C++ driver and currently supports MongoDB 2.4, 2.6,
+ 3.0 and 3.2.
+ .
+ This package contains the development support files.
+

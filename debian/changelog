@@ -1,0 +1,5 @@
+mongo-cxx-driver (3.0.1-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Jon Ander Hernandez <jonan.h@gmail.com>  Thu, 01 Sep 2016 23:48:44 +0300
