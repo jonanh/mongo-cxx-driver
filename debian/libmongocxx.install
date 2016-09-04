@@ -1,1 +1,3 @@
 usr/lib/lib*.so.*
+# TODO: fix multiarch
+#usr/lib/*/lib*.so.*

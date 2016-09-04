@@ -1,10 +1,22 @@
+mongo-cxx-driver (3.0.1-1ubuntu4) xenial; urgency=medium
+
+  * Change the instalation directory of MNMLSTC
+
+ -- Jon Ander Hernandez <jonan.h@gmail.com>  Sun, 04 Sep 2016 03:41:38 +0300
+
+mongo-cxx-driver (3.0.1-1ubuntu3) xenial; urgency=medium
+
+  * Change the instalation directory of MNMLSTC
+
+ -- Jon Ander Hernandez <jonan.h@gmail.com>  Sun, 04 Sep 2016 03:41:10 +0300
+
 mongo-cxx-driver (3.0.1-1ubuntu2) xenial; urgency=medium
 
   * Update CMakeList fix
   * Fix install files
   * Disable tests
 
- -- Jon Ander Hernandez <jonan.h@gmail.com>  Sat, 03 Sep 2016 22:24:08 +0300
+ -- Jon Ander Hernandez <jonan.h@gmail.com>  Sun, 04 Sep 2016 03:39:25 +0300
 
 mongo-cxx-driver (3.0.1-1ubuntu1) xenial; urgency=medium
 

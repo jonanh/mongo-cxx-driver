@@ -1,2 +1,4 @@
 usr/include/*
 usr/lib/pkgconfig/*
+# TODO: Fix multiarch
+#usr/lib/*/pkgconfig/*
